@@ -2,7 +2,8 @@
 
 import pandas as pd
 
-df_src = pd.read_excel(r'해운대구 반송동.xls')
+nameOfSrc = input("접면이 있는 파일 이름: ")
+df_src = pd.read_excel(nameOfSrc + ".xls")
 #print(df_src[['소재지', '지번', '접면']].iloc[0])
 #print(df_src.iloc[0])
 
@@ -12,7 +13,8 @@ place = place[0] + " " + place[2]
 placeNumber = df_src[['소재지', '지번', '접면']].iloc[0]['지번']
 fullAddr = place + " " + placeNumber
 
-df_dst = pd.read_excel(r'해운대구.xls')
+nameOfDst = input("대상 파일 이름: ")
+df_dst = pd.read_excel(nameOfDst + ".xls")
 #print(df_dst['소재지'][0].replace("부산광역시 ", ""))
 #print(len(df_src))
 d = {}
