@@ -29,12 +29,9 @@ for i in range(len(df_dst) - 1):
     if dstAddr in d.keys():
         print(i, d[dstAddr])
         result.append(d[dstAddr])
-    else:
-        print("-------------------")
-        break
 
 df = pd.DataFrame({'Data': result}) 
-df.to_excel(nameOfSrc + "_.xls")
+df.to_excel(nameOfSrc + "_접면" + ".xls")
         
 
         
