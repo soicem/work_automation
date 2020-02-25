@@ -27,7 +27,7 @@ result = []
 for i in range(len(df_dst) - 1):
     dstAddr = df_dst['소재지'][i].replace("부산광역시 ", "")
     if dstAddr in d.keys():
-        print(i, d[dstAddr])
+        print(dstAddr, d[dstAddr])
         result.append(d[dstAddr])
 
 df = pd.DataFrame({'Data': result}) 
