@@ -24,17 +24,15 @@ for j in range(len(df_src) - 1):
 
 result = []
 
-for i in range(len(df_dst) - 1):
+for i in range(len(df_dst)-1):
     dstAddr = df_dst['소재지'][i].replace("부산광역시 ", "")
+    if dstAddr.find(nameOfSrc) == -1:
+            continue;
     if dstAddr in d.keys():
         print(dstAddr, d[dstAddr])
         result.append(d[dstAddr])
     else:
+        print(dstAddr, "x")
         result.append("x")
-        print("xxxxxxxxxxxxxxxxxxxx")
 df = pd.DataFrame({'Data': result}) 
 df.to_excel(nameOfSrc + "_접면" + ".xls")
-        
-
-        
-        
